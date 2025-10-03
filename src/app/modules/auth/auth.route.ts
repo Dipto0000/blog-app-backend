@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { authController } from "./auth.controller";
+import { AuthController } from "./auth.controller";
 
 
 const router = Router();
 
-router.post("/login", authController.credentialsLogin);
-// router.post("/logOut",)
-// router.post("refresh-token",)
+router.post("/login", AuthController.credentialsLogin);
+router.post("/logout", AuthController.logout);
+router.post("/refresh-token", AuthController.getNewAccessToken);
 
 
 

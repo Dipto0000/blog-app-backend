@@ -19,6 +19,7 @@ export const seedSuperAdmin = async () => {
         const hashedPassword = await bcryptjs.hash(envVars.SUPER_ADMIN_PASSWORD, Number(envVars.SALT_ROUNDS));
 
         const payload: IUser = {
+            role: "Super Admin",
             email: envVars.SUPER_ADMIN_EMAIL,
             password: hashedPassword
         }
