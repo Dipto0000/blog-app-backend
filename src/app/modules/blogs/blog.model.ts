@@ -15,7 +15,8 @@ const blogSchema = new Schema<IBlog>({
     category: { type: String },
     
 }, {
-    timestamps: true
+    timestamps: true,
+    versionKey: false
 });
 
 export const Booking = model<IBlog>("Blog", blogSchema);
