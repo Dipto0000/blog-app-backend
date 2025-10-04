@@ -11,7 +11,11 @@ const blogSchema = new Schema<IBlog>({
         required: true
     },
     image: { type: String },
-    author: { type: String },
+    author: {
+        type: String, 
+        default: "Shahriar Ahmed"
+        
+     },
     category: { type: String },
     
 }, {
@@ -19,4 +23,4 @@ const blogSchema = new Schema<IBlog>({
     versionKey: false
 });
 
-export const Booking = model<IBlog>("Blog", blogSchema);
+export const Blog = model<IBlog>("Blog", blogSchema);

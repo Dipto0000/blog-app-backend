@@ -30,9 +30,13 @@ export const checkAuth = (role: Partial<IUser>) => (req: Request, res: Response,
 
         req.user = verifiedToken;
 
+        
+
     } catch (error) {
         console.log(error);
         
     }
+
+    next();
 
 }
