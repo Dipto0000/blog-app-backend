@@ -1,10 +1,10 @@
 
 
-// export enum Role {
-//     SuperAdmin = "Super Admin"
-// }
+export enum Role {
+    SuperAdmin = "Super Admin"
+}
 export interface IUser {
-    role: string;
+    role: Role;
     email: string;
     password: string;
 }

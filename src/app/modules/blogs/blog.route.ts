@@ -1,13 +1,14 @@
 import express from "express";
 import { BlogController } from "./blog.controller";
 import { checkAuth } from "../../middleswares/checkAuth";
+import { Role } from "../user/user.interface";
 
 const router = express.Router();
 
-router.post("/create", checkAuth({ role: "Super Admin" }), BlogController.createBlogPost);
+router.post("/create", checkAuth(Role.SuperAdmin), BlogController.createBlogPost);
 router.get("/", BlogController.getBlogPosts);
 router.get("/:id", BlogController.getSingleBlogPost);
-router.delete("/:id", checkAuth({ role: "Super Admin" }), BlogController.deleteBlogPost);
-router.patch("/:id", checkAuth({ role: "Super Admin" }), BlogController.updateBlogPost);
+router.delete("/:id", checkAuth(Role.SuperAdmin), BlogController.deleteBlogPost);
+router.patch("/:id", checkAuth(Role.SuperAdmin), BlogController.updateBlogPost);
 
 export const blogRoutes = router;

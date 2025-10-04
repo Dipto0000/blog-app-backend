@@ -5,6 +5,7 @@ import { IUser } from "./user.interface";
 const userSchema = new Schema<IUser>({
     role: {
         type: String,
+        enum: ["Super Admin"],
         required: true
     },
     email: {
